@@ -1,15 +1,22 @@
 // models/index.js
 const { Sequelize, DataTypes } = require('sequelize');
 
-// Usamos la URL pública (Railway) o variable fallback local
-const connectionString =
-  process.env.MYSQL_PUBLIC_URL || process.env.DATABASE_URL || 'mysql://root:FsCYrymUEWZnINzeFFbaVWMzrYZJUEEJ@shuttle.proxy.rlwy.net:32647/railway';
+// Tomamos la URL completa desde las variables de entorno
+const connectionString = process.env.MYSQL_PUBLIC_URL;
 
+// Si no existe, lanzamos error
+if (!connectionString) {
+  console.error("❌ No se encontró la variable MYSQL_PUBLIC_URL");
+  process.exit(1);
+}
+
+// Conexión con Sequelize
 const sequelize = new Sequelize(connectionString, {
   dialect: 'mysql',
   logging: false, // cambiar a true si quieres ver queries en consola
 });
 
+// Definimos el modelo Product
 const Product = sequelize.define('Product', {
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
