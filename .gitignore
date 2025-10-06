@@ -1,0 +1,35 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivos de entorno (credenciales y configuraciones)
+.env
+.env.local
+.env.*.local
+
+# Logs y archivos temporales
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Cache y builds
+.cache/
+dist/
+build/
+
+# Archivos de cobertura de test
+coverage/
+
+# Archivos de Docker (opcional, si no lo usas en Render)
+Dockerfile
+.dockerignore
+
+# Archivos de editor o IDE
+.vscode/
+.idea/
+*.swp
