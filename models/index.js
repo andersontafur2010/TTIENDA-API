@@ -3,7 +3,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 // Usamos la URL pública (Railway) o variable fallback local
 const connectionString =
-  process.env.MYSQL_PUBLIC_URL || process.env.DATABASE_URL || 'mysql://root:password@localhost:3306/railway';
+  process.env.MYSQL_PUBLIC_URL || process.env.DATABASE_URL || 'mysql://root:FsCYrymUEWZnINzeFFbaVWMzrYZJUEEJ@shuttle.proxy.rlwy.net:32647/railway';
 
 const sequelize = new Sequelize(connectionString, {
   dialect: 'mysql',
